@@ -6,11 +6,16 @@ padding: 0;
  box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1, h2, h3, h4, h5, h6{
     color: #242424;
 text-align: center;
 line-height: 1.25;
 }
+
 h1{
 font-size: 36px;
 }
@@ -19,7 +24,7 @@ p{
  line-height: 1.5;
  font-size: 16px;
  }
-
+  
  li {
 list-style-type: none;
 }
@@ -27,9 +32,11 @@ list-style-type: none;
 .flex{
     display: flex;
 }
-
 .flex-1{
 flex:1;
+}
+.container{
+    padding: 50px 0;
 }
 .row{
     width: 100%;
@@ -38,6 +45,15 @@ flex:1;
 }
 .text--blue {
 color: #0055ff;
+}
+/* Icons logo */
+
+section:nth-child(even){
+    background-color: #f8f8f8;
+}
+
+.section__title {
+    margin-bottom: 20px;
 }
 
 /* Navigation Bar*/
@@ -60,7 +76,7 @@ align-items: center;
     margin: 0 12px;
     color: #242424;
     text-decoration: none;
-font-weight: 700;
+    font-weight: 700;
 }
 
 .nav__link--anchor-primary{
@@ -97,7 +113,7 @@ font-weight: 700;
     margin: 0 auto;
     text-align: center;
 }
-
+/* Image */
 .about-me_picture--mask{
 width: 75px;
 height: 75px;
@@ -107,8 +123,8 @@ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
 margin-bottom: 28px;
 }
 
-.about-me_picture{
-    width: 100%;
+.about-me__picture{
+    width: 65%;
 
 /* Improving my own pricture */
 
@@ -135,8 +151,86 @@ padding-top: 8px;
     flex: 1; 
     display: flex;
     align-items: center;
-}
+    margin-top: 40px;
+     }
 
 .about-me__img { 
     width: 100%;
+}
+
+/* TECH - STACK */
+ 
+.language__img {
+    width: 100%;
+    max-width: 100px;
+}
+.language:hover .language__img{
+    filter: brightness(80%);
+    opacity: 0.86;
+    transform: scale(0.9);
+    }
+
+.language{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.language__img--wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+    }
+.language__list{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.language__name{
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    transition: all 300ms;
+    font-size: 20px;
+}
+.language:hover .language__name{
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* PROJECTS */
+
+.project__img{
+    width: 100%;
+    transition: all 500ms ease;
+}
+
+.project__wrapper{
+    display: flex;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project__wrapper::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    background-color: #1c1d25;
+    opacity: 0;
+    transition: opacity 450ms ease;
+}
+
+.project:hover .project__wrapper:before {
+opacity: 0.7;
+}
+
+.project:hover .project__img {
+    transform: scale(1.07);
+    filter: blur(5px);
 }
